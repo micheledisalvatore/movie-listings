@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import Main from './layouts/main';
 
 import { store } from './config/store';
+
 const App = () => (
   <Provider store={store}>
     <Main />

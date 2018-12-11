@@ -9,17 +9,17 @@ export const getGenres = () => ({
   type: GET_GENRES,
 });
 
-export const getGenresSuccess = (genres) => ({
+export const getGenresSuccess = genres => ({
   type: GET_GENRES_SUCCESS,
   genres,
 });
 
-export const getGenresFailure = (error) => ({
+export const getGenresFailure = error => ({
   type: GET_GENRES_FAILURE,
   error,
 });
 
-export const setFilterGenres = (genreId) => ({
+export const setFilterGenres = genreId => ({
   type: SET_FILTER_GENRE,
   genreId,
-})
+});

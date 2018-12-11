@@ -34,7 +34,7 @@ describe('Given a GenresSelection component', () => {
 
     it('should NOT render other options', () => {
       expect(wrapper.find(MenuItem)).toHaveLength(1);
-    })
+    });
 
     describe('and a list of genres is passed', () => {
       beforeEach(() => {
@@ -42,10 +42,10 @@ describe('Given a GenresSelection component', () => {
           genres: [{
             id: 0,
             name: 'foo',
-          },{
+          }, {
             id: 1,
             name: 'bar',
-          }]
+          }],
         });
       });
 
@@ -63,7 +63,7 @@ describe('Given a GenresSelection component', () => {
 
       describe('and the user selects the first option', () => {
         beforeEach(() => {
-          wrapper.find(Select).simulate('change', { target: { value: [0] }});
+          wrapper.find(Select).simulate('change', { target: { value: [0] } });
         });
 
         it('should call setFilterGenresAction with the selected options', () => {
@@ -80,9 +80,9 @@ describe('Given a GenresSelection component', () => {
           it('should render the Select component with the passed filters', () => {
             expect(wrapper.find(Select)).toHaveProp('value', [0]);
           });
-        })
-      })
-    })
+        });
+      });
+    });
   });
 });
 
@@ -105,12 +105,12 @@ describe('Given a mapStateToProps function', () => {
         },
       })).toEqual({
         genres: [{
-            id: 3,
-            name: 'bar',
-          }, {
-            id: 1,
-            name: 'foo',
-          }
+          id: 3,
+          name: 'bar',
+        }, {
+          id: 1,
+          name: 'foo',
+        },
         ],
         filters: ['foo'],
       });

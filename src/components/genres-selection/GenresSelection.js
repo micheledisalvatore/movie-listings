@@ -21,13 +21,13 @@ const MenuProps = {
   },
 };
 
-export const GenresSelection  = ({
+export const GenresSelection = ({
   setFilterGenresAction,
   classes,
   genres,
   filters,
 }) => {
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { target: { value } } = event;
 
     setFilterGenresAction(value);
@@ -56,7 +56,7 @@ export const GenresSelection  = ({
       </FormControl>
     </div>
   );
-}
+};
 
 GenresSelection.propTypes = {
   classes: PropTypes.object.isRequired,
@@ -70,7 +70,7 @@ GenresSelection.propTypes = {
   setFilterGenresAction: PropTypes.func.isRequired,
 };
 
-export const mapStateToProps = ({ genres: { list, filters }}) => ({
+export const mapStateToProps = ({ genres: { list, filters } }) => ({
   genres: values(list).sort((a, b) => a.name.localeCompare(b.name)) || [],
   filters,
 });

@@ -1,4 +1,4 @@
-export const styles = (theme) => ({
+export const styles = theme => ({
   root: {
     flexGrow: 1,
     paddingTop: 64,
@@ -11,5 +11,5 @@ export const styles = (theme) => ({
     [theme.breakpoints.up('sm')]: {
       justifyContent: 'space-around',
     },
-  }
+  },
 });

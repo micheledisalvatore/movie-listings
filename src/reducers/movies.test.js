@@ -5,7 +5,6 @@ import { GET_MOVIES_SUCCESS, FILTER_MOVIE_RATING } from '../constants/movies';
 import movies from './movies';
 
 describe('Given a movies reducer', () => {
-
   describe('when a state is passed', () => {
     let initState;
 

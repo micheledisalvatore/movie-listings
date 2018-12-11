@@ -7,7 +7,9 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 
-export const MovieCard = ({ classes, image, title, genreIds, genres }) => (
+export const MovieCard = ({
+  classes, image, title, genreIds, genres,
+}) => (
   <Card className={classes.card}>
     <div className={classes.details}>
       <CardMedia
@@ -22,16 +24,16 @@ export const MovieCard = ({ classes, image, title, genreIds, genres }) => (
           {title}
         </Typography>
         <div>
-        {!isEmpty(genres) && genreIds.map(genreId => {
-          const { name } = genres[genreId];
-          return (
-            <Chip
-              key={genreId}
-              label={name}
-              className={classes.chip}
-            />
-          )}
-        )}
+          {!isEmpty(genres) && genreIds.map((genreId) => {
+            const { name } = genres[genreId];
+            return (
+              <Chip
+                key={genreId}
+                label={name}
+                className={classes.chip}
+              />
+            );
+          })}
         </div>
       </CardContent>
     </div>
@@ -51,8 +53,8 @@ MovieCard.propTypes = {
 MovieCard.defaultProps = {
   genreIds: [],
   genres: {},
-}
+};
 
-export const mapStateToProps = ({ genres: { list }}) => ({
+export const mapStateToProps = ({ genres: { list } }) => ({
   genres: list || {},
-})
+});

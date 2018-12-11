@@ -20,7 +20,9 @@ export class MoviesList extends Component {
     return (
       <div className={classes.root}>
         <Grid container spacing={24}>
-          { movies.map(({ id, poster_path: image, title, genre_ids: genreIds }) => (
+          { movies.map(({
+            id, poster_path: image, title, genre_ids: genreIds,
+          }) => (
             <Grid item xs={12} sm={6} md={3} key={id} className={classes.item}>
               <MovieCard image={image} title={title} genreIds={genreIds} />
             </Grid>
@@ -40,7 +42,7 @@ MoviesList.propTypes = {
       genre_ids: PropTypes.arrayOf(PropTypes.number),
       poster_path: PropTypes.string,
       title: PropTypes.string,
-    })
+    }),
   ),
 };
 
@@ -48,19 +50,22 @@ MoviesList.defaultProps = {
   movies: [],
 };
 
-const filterMovies = (filterRating, filterGenres) => ({ vote_average, genre_ids }) => {
-  const isMatchingRating = vote_average >= (filterRating * 2);
-  const hasSelectedCategory = filterGenres.length > 0 && filterGenres.every(filterGenre => genre_ids.indexOf(filterGenre) > -1);
+const filterMovies = (filterRating, filterGenres) => ({
+  vote_average: voteAverage,
+  genre_ids: genreIds,
+}) => {
+  const isMatchingRating = voteAverage >= (filterRating * 2);
+  const hasSelectedCategory = filterGenres.every(filterGenre => genreIds.indexOf(filterGenre) > -1);
 
   return isMatchingRating && (filterGenres.length === 0 || hasSelectedCategory);
-}
+};
 
-const sortByPopularity = (a, b) => b.popularity - a.popularity
+const sortByPopularity = (a, b) => b.popularity - a.popularity;
 
-export const mapStateToProps = ({ movies: { list, filterRating }, genres: { filters }}) => ({
+export const mapStateToProps = ({ movies: { list, filterRating }, genres: { filters } }) => ({
   movies: values(list).filter(filterMovies(filterRating, filters)).sort(sortByPopularity) || [],
-})
+});
 
 export const mapDispatchToProps = dispatch => ({
   getMoviesAction: bindActionCreators(getMovies, dispatch),
-})
+});

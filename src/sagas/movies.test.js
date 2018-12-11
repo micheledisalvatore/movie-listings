@@ -1,3 +1,5 @@
+/* eslint-env jest */
+
 import {
   call,
   put,
@@ -14,33 +16,34 @@ describe('Given a movies saga', () => {
     const watchActionsGen = watchActions();
 
     it('should call getMoviesRemote', () => {
-      expect(watchActionsGen.next().value).toEqual(takeLatest(GET_MOVIES, getMoviesRemote))
-    })
+      expect(watchActionsGen.next().value).toEqual(takeLatest(GET_MOVIES, getMoviesRemote));
+    });
 
     describe('and the getMoviesRemote is invoked', () => {
       const getMoviesRemoteGen = getMoviesRemote();
 
       it('should call fetchMovies', () => {
-        expect(getMoviesRemoteGen.next().value).toEqual(call(fetchMovies))
-      })
+        expect(getMoviesRemoteGen.next().value).toEqual(call(fetchMovies));
+      });
 
       it('should call the json parser', () => {
         const json = jest.fn();
-        expect(getMoviesRemoteGen.next({ json }).value).toEqual(call([{ json }, json]))
-      })
+        expect(getMoviesRemoteGen.next({ json }).value).toEqual(call([{ json }, json]));
+      });
 
       describe('when the flow does NOT fail', () => {
         it('should call the getMoviesSuccess action', () => {
           const data = { results: [{ id: 1 }] };
-          expect(getMoviesRemoteGen.next(data).value).toEqual(put(getMoviesSuccess({ 1: { id: 1 }})))
-        })
-      })
+          expect(getMoviesRemoteGen.next(data).value)
+            .toEqual(put(getMoviesSuccess({ 1: { id: 1 } })));
+        });
+      });
 
       describe('when the flow does fail', () => {
         it('should call the getMoviesFailure action', () => {
-          expect(getMoviesRemoteGen.throw('error').value).toEqual(put(getMoviesFailure('error')))
-        })
-      })
-    })
-  })
-})
+          expect(getMoviesRemoteGen.throw('error').value).toEqual(put(getMoviesFailure('error')));
+        });
+      });
+    });
+  });
+});

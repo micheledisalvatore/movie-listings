@@ -5,7 +5,6 @@ import { GET_GENRES_SUCCESS, SET_FILTER_GENRE } from '../constants/genres';
 import genres from './genres';
 
 describe('Given a genres reducer', () => {
-
   describe('when a state is passed', () => {
     let initState;
 

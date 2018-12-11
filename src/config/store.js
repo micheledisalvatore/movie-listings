@@ -1,5 +1,4 @@
-import { createStore, compose } from 'redux';
-import { applyMiddleware } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
 import reducers from '../reducers';
@@ -10,7 +9,7 @@ const reduxDevTools = process.env.NODE_ENV === 'development' && window.__REDUX_D
 /* eslint-enable */
 
 const sagaMiddleware = createSagaMiddleware();
-const middleware = applyMiddleware(sagaMiddleware)
+const middleware = applyMiddleware(sagaMiddleware);
 
 export const store = createStore(
   reducers,

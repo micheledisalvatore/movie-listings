@@ -20,7 +20,7 @@ export function* getGenresRemote() {
     const {
       entities: {
         genres,
-      }
+      },
     } = normalize(data.genres, [genreSchema]);
 
     yield put(getGenresSuccess(genres));

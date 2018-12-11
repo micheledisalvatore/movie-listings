@@ -6,11 +6,11 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 import { filterRating } from '../../actions/movies';
 
-export const RatingSelection = ({ filterRating, filterRatingAction }) => (
+export const RatingSelection = ({ rating, filterRatingAction }) => (
   <div>
     <InputLabel htmlFor="rating">Rating:</InputLabel>
     <StarRatings
-      rating={filterRating}
+      rating={rating}
       starRatedColor="yellow"
       starEmptyColor="white"
       starHoverColor="yellow"
@@ -21,17 +21,17 @@ export const RatingSelection = ({ filterRating, filterRatingAction }) => (
       id="rating"
     />
   </div>
-)
+);
 
 RatingSelection.propTypes = {
-  filterRating: PropTypes.number,
+  rating: PropTypes.number.isRequired,
   filterRatingAction: PropTypes.func.isRequired,
-}
+};
 
-export const mapStateToProps = ({ movies: { filterRating }}) => ({
-  filterRating,
+export const mapStateToProps = ({ movies: { filterRating: rating } }) => ({
+  rating,
 });
 
 export const mapDispatchToProps = dispatch => ({
   filterRatingAction: bindActionCreators(filterRating, dispatch),
-})
+});

@@ -1,4 +1,4 @@
-export const styles = (theme) => ({
+export const styles = theme => ({
   details: {
     display: 'flex',
     flexDirection: 'column',

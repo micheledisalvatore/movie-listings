@@ -7,7 +7,7 @@ import MoviesList from '../../components/movies-list';
 import GenresSelection from '../../components/genres-selection';
 import RatingSelection from '../../components/rating-selection';
 
-export const Main = ({ classes }) =>  (
+export const Main = ({ classes }) => (
   <div className={classes.root}>
     <AppBar position="fixed" color="default" className={classes.appBar}>
       <Toolbar className={classes.toolBar}>

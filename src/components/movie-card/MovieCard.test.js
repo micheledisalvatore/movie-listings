@@ -44,8 +44,8 @@ describe('Given a MovieCard component', () => {
           genres: {
             0: { name: 'foo' },
             1: { name: 'bar' },
-          }
-        })
+          },
+        });
       });
 
       it('should NOT render the genre chips', () => {
@@ -56,7 +56,7 @@ describe('Given a MovieCard component', () => {
         beforeEach(() => {
           wrapper.setProps({
             genreIds: [0],
-          })
+          });
         });
 
         it('should render one genre chip', () => {
@@ -65,9 +65,9 @@ describe('Given a MovieCard component', () => {
 
         it('should render the chip with the right name', () => {
           expect(wrapper.find(Chip)).toHaveProp('label', 'foo');
-        })
-      })
-    })
+        });
+      });
+    });
   });
 });
 
