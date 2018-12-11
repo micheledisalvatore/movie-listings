@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a MovieCard component when it is rendered should match the snapshot 1`] = `
+<WithStyles(Card)>
+  <div>
+    <WithStyles(CardMedia)
+      alt="Contemplative Reptile"
+      component="img"
+      image="https://image.tmdb.org/t/p/w500/fooImageUrl"
+      title="fooTitle"
+    />
+    <WithStyles(CardContent)>
+      <WithStyles(Typography)
+        component="h2"
+        gutterBottom={true}
+        variant="h5"
+      >
+        fooTitle
+      </WithStyles(Typography)>
+      <div />
+    </WithStyles(CardContent)>
+  </div>
+</WithStyles(Card)>
+`;

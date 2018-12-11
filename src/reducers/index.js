@@ -1,5 +1,11 @@
 import { combineReducers } from 'redux';
 
-const appReducer = combineReducers({});
+import genres from './genres';
+import movies from './movies';
+
+const appReducer = combineReducers({
+  genres,
+  movies,
+});
 
 export default appReducer;

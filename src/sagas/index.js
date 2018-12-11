@@ -1,6 +1,12 @@
 import { all } from 'redux-saga/effects';
 
-const sagas = [];
+import genres from './genres';
+import movies from './movies';
+
+const sagas = [
+  genres,
+  movies,
+];
 
 function* rootSaga() {
   yield all(sagas);

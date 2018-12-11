@@ -4,12 +4,16 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.6.2",
+    "normalizr": "^3.3.0",
     "prop-types": "^15.6.2",
+    "ramda": "^0.26.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-scripts": "2.1.1",
+    "react-star-ratings": "^2.3.0",
     "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
     "redux-saga": "^0.16.2"
   },
   "scripts": {
@@ -26,5 +30,14 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^7.0.1",
+    "react-test-renderer": "^16.6.3"
+  }
 }

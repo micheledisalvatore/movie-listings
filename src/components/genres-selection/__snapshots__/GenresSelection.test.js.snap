@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given a GenresSelection component when it is rendered and a list of genres is passed should match the snapshot 1`] = `
+<div>
+  <WithStyles(WithFormControlContext(InputLabel))
+    htmlFor="select-multiple"
+  >
+    Genres:
+  </WithStyles(WithFormControlContext(InputLabel))>
+  <WithStyles(FormControl)>
+    <WithStyles(WithFormControlContext(Select))
+      MenuProps={
+        Object {
+          "PaperProps": Object {
+            "style": Object {
+              "maxHeight": 224,
+              "width": 250,
+            },
+          },
+        }
+      }
+      input={
+        <WithStyles(Input)
+          id="select-multiple"
+        />
+      }
+      multiple={true}
+      onChange={[Function]}
+      value={Array []}
+    >
+      <WithStyles(MenuItem)
+        disabled={true}
+        value=""
+      >
+        <em>
+          All
+        </em>
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="0"
+        value={0}
+      >
+        foo
+      </WithStyles(MenuItem)>
+      <WithStyles(MenuItem)
+        key="1"
+        value={1}
+      >
+        bar
+      </WithStyles(MenuItem)>
+    </WithStyles(WithFormControlContext(Select))>
+  </WithStyles(FormControl)>
+</div>
+`;
+
+exports[`Given a GenresSelection component when it is rendered should match the snapshot 1`] = `
+<div>
+  <WithStyles(WithFormControlContext(InputLabel))
+    htmlFor="select-multiple"
+  >
+    Genres:
+  </WithStyles(WithFormControlContext(InputLabel))>
+  <WithStyles(FormControl)>
+    <WithStyles(WithFormControlContext(Select))
+      MenuProps={
+        Object {
+          "PaperProps": Object {
+            "style": Object {
+              "maxHeight": 224,
+              "width": 250,
+            },
+          },
+        }
+      }
+      input={
+        <WithStyles(Input)
+          id="select-multiple"
+        />
+      }
+      multiple={true}
+      onChange={[Function]}
+      value={Array []}
+    >
+      <WithStyles(MenuItem)
+        disabled={true}
+        value=""
+      >
+        <em>
+          All
+        </em>
+      </WithStyles(MenuItem)>
+    </WithStyles(WithFormControlContext(Select))>
+  </WithStyles(FormControl)>
+</div>
+`;
